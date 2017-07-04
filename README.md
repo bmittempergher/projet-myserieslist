@@ -15,3 +15,30 @@ L’application doit couvrir les besoins suivants :
 Les informations des séries/films doivent être reprises directement en ligne.
 
 ## Maquettes
+**Accueil** (Large)
+
+<img src="./img_readme/accueil_lg.png" alt="Accueil Large" >
+
+**Accueil** (Small)
+
+<img src="./img_readme/accueil_sm.png" alt="Accueil Small" >
+
+**MaListe** (Large)
+
+<img src="./img_readme/ma_list_lg.png" alt="MaListe Large" >
+
+**MaListe** (Small)
+
+<img src="./img_readme/ma_list_sm.png" alt="MaListe Small" >
+
+**AjouterAMaListe** (Large)
+
+<img src="./img_readme/add_to_list_lg.png" alt="AjouterAMaListe Large" >
+
+**AjouterAMaListe** (Small)
+
+<img src="./img_readme/add_to_list_sm.png" alt="AjouterAMaListe Small" >
+
+**DetailSerieDeMaListe**
+
+<img src="./img_readme/detail_lg.png" alt="Detail d'une serie de ma liste" >
