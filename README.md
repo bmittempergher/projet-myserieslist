@@ -1,21 +1,17 @@
-# myserieslist
+# mySeriesList 
+Projet dans le cadre du cours de technologies web
+Réalisé par Mael Voyame et Normand Paratte
 
-> Gestion de suivi de ses séries
+## Description du projet
+mySeriesList est un site permettant de gérer le suivi des séries.
 
-## Build Setup
+##Description de l’interaction / fonctionnalité
+Le but est d’avoir un suivi en temps réel de l’avancement de ses séries.
 
-``` bash
-# install dependencies
-npm install
+L’application doit couvrir les besoins suivants :
+- Permettre l’utilisateur de saisir son avancé de visualisation pour une série
+- Permettre de donner une note à un épisode ou une série
 
-# serve with hot reload at localhost:8080
-npm run dev
+Les informations des séries/films doivent être reprises directement en ligne.
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Maquettes
