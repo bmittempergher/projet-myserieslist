@@ -2,12 +2,12 @@
     <div>
         <md-layout md-gutter>
             <md-layout v-for="(titre , index) in titres" v-bind:key="index" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
-                <md-card style="max-width: 320px; display: inline-block; padding: 16px; margin: 16px;">
+                <md-card style="max-width: 320px; display: inline-block; padding: 10px; margin: 16px;">
                     <md-card-header>
-                        <div class="md-title">{{titre}}</div>
+                        <div class="md-title" style="text-align: center;">{{titre}}</div>
                     </md-card-header>
                     <md-card-media>
-                        <img v-bind:src="images[index]" style="width: 200px; height: 200px; margin: auto; display: block;">
+                        <img v-bind:src="images[index]" style="width: 240px; height: 240px; margin: auto; display: block;">
                     </md-card-media>
                     <md-card-content>
                         {{synopsis[index]}}
@@ -39,11 +39,6 @@ export default {
     };
   },
   props: ['serie', 'ind'],
-  filters: {
-    toImage (serie) {
-      return 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/1200px-Breaking_Bad_logo.svg.png';
-    }
-  },
   name: 'serie'
 };
 </script>
