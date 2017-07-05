@@ -19,11 +19,11 @@ export default {
   props: ['serie', 'ind'],
   filters: {
     toImage (serie) {
-      return 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/1200px-Breaking_Bad_logo.svg.png'
+      return 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/1200px-Breaking_Bad_logo.svg.png';
     }
   },
   name: 'serie'
-}
+};
 </script>
 
 <style>
