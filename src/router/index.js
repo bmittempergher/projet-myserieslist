@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import VueMaterial from 'vue-material'
+import Menu from '@/components/Menu'
+import Serie from '@/components/Serie'
 
-Vue.use(Router)
 Vue.use(VueMaterial)
+Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Menu',
+      component: Menu
+    },
+    {
+      path: '/',
+      name: 'Serie',
+      component: Serie
     }
   ]
 })
