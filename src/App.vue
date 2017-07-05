@@ -9,7 +9,6 @@
 </template>
 
 <script>
-  import Menu from './components/Menu';
   import Serie from './components/Serie';
   export default {
     name: 'app',
@@ -21,8 +20,7 @@
       };
     },
     components: {
-      Serie,
-      Menu
+      Serie
     }
   };
 </script>

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import VueMaterial from 'vue-material';
-import Menu from '@/components/Menu';
+import MenuPrincipal from '@/components/Menu';
 import Serie from '@/components/Serie';
 
 Vue.use(VueMaterial);
@@ -11,12 +11,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Menu',
-      component: Menu
+      name: 'MenuPrincipal',
+      component: MenuPrincipal
     },
     {
       path: '/',
       name: 'Serie',
+      component: Serie
+    },
+    {
+      path: '/',
+      name: 'SerieDetail',
       component: Serie
     }
   ]
