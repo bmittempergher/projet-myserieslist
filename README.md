@@ -42,3 +42,4 @@ Les informations des séries/films doivent être reprises directement en ligne.
 **DetailSerieDeMaListe**
 
 <img src="./img_readme/detail_lg.png?raw=true" alt="Detail d'une serie de ma liste" >
+![Detail d'une serie de ma liste](./img_readme/detail_lg.png)
