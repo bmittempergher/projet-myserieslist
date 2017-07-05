@@ -17,28 +17,28 @@ Les informations des séries/films doivent être reprises directement en ligne.
 ## Maquettes
 **Accueil** (Large)
 
-<img src="./img_readme/accueil_lg.png" alt="Accueil Large" >
+<img src="./img_readme/accueil_lg.png?raw=true" alt="Accueil Large" >
 
 **Accueil** (Small)
 
-<img src="./img_readme/accueil_sm.png" alt="Accueil Small" >
+<img src="./img_readme/accueil_sm.png?raw=true" alt="Accueil Small" >
 
 **MaListe** (Large)
 
-<img src="./img_readme/ma_list_lg.png" alt="MaListe Large" >
+<img src="./img_readme/ma_list_lg.png?raw=true" alt="MaListe Large" >
 
 **MaListe** (Small)
 
-<img src="./img_readme/ma_list_sm.png" alt="MaListe Small" >
+<img src="./img_readme/ma_list_sm.png?raw=true" alt="MaListe Small" >
 
 **AjouterAMaListe** (Large)
 
-<img src="./img_readme/add_to_list_lg.png" alt="AjouterAMaListe Large" >
+<img src="./img_readme/add_to_list_lg.png?raw=true" alt="AjouterAMaListe Large" >
 
 **AjouterAMaListe** (Small)
 
-<img src="./img_readme/add_to_list_sm.png" alt="AjouterAMaListe Small" >
+<img src="./img_readme/add_to_list_sm.png?raw=true" alt="AjouterAMaListe Small" >
 
 **DetailSerieDeMaListe**
 
-<img src="./img_readme/detail_lg.png" alt="Detail d'une serie de ma liste" >
+<img src="./img_readme/detail_lg.png?raw=true" alt="Detail d'une serie de ma liste" >
