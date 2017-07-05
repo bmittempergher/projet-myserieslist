@@ -18,6 +18,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       extract: true
     })
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      'vue-material-home':'vue-material/dist/'
+    }
+  },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
