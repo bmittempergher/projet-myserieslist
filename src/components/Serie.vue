@@ -7,7 +7,7 @@
                         <div class="md-title" style="text-align: center;">{{titre}}</div>
                     </md-card-header>
                     <md-card-media>
-                        <img v-bind:src="images[index]" style="width: 240px; height: 240px; margin: auto; display: block;">
+                        <img v-bind:src="images[index]" style="width: inherit; margin: auto; display: block;">
                     </md-card-media>
                     <md-card-content>
                         {{synopsis[index]}}
