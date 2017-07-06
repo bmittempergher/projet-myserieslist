@@ -42,3 +42,17 @@ Les informations des séries/films doivent être reprises directement en ligne.
 **DetailSerieDeMaListe**
 
 <img src="./img_readme/detail_lg.PNG" alt="Detail d'une serie de ma liste" >
+
+## Problèmes/Solutions et retour d'expérience
+A COMPLETER
+
+## Schéma de l'architecture
+1. On arrive au point d'entrée index.html
+2. La div app de cette page redirige vers main.js qui contient la vue
+3. Cette vue redirige vers le fichier App.vue
+4. La balise MenuPrincipal indique qu'une vue sera appeler dans cette balise - Menu-Vue (Cette vue sera appelé sur chaque page de l'application)
+5. La balise router-view indique qu'il faut suivre une route pour y afficher le contenu
+6. Le système va voir dans le fichier index.js quelle route prendre
+7. La première page (vue) à être affichée est Serie.vue (celle-ci s'intègre dans la balise router-view)
+
+<img src="./img_readme/architecture_vue.PNG" alt="Architecture de Vue.js" >
