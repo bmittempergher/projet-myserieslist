@@ -17,6 +17,11 @@ export default new Router({
       path: '/',
       name: 'SerieDetail',
       component: Serie
+    },
+    {
+      path: '/',
+      name: 'recherche/:recherche',
+      component: Serie
     }
   ]
 });
