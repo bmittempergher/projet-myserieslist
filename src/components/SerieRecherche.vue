@@ -5,7 +5,7 @@
             <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
                 <md-card class="card">
                     <md-card-header>
-                        <a v-bind:href="'/#/detail/'+serie.id">
+                        <a v-bind:href="'./#/detail/'+serie.id">
                             <div class="md-title">{{serie.titre}}</div>
                         </a>
                     </md-card-header>

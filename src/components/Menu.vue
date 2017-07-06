@@ -2,13 +2,13 @@
     <md-toolbar class="md-medium">
         <md-layout md-gutter>
             <md-layout md-align-xsmall="center" class="titre-application" md-flex-xsmall="100" md-flex-small="100" md-flex-medium="50" md-flex-large="50">
-                <a href="/#/">
+                <a href="./#/">
                     <h1 class="md-title">MySeriesList</h1>
                 </a>
             </md-layout>
             <md-layout md-flex-xsmall="100" md-flex-small="100" md-flex-medium="50" md-flex-large="50">
                 <label class="label-recherche">Rechercher : <input type="text" id="recherche" name="recherche" v-model="valeurRecherche" ></label>
-                <a v-bind:href="'/#/recherche/'+valeurRecherche">
+                <a v-bind:href="'./#/recherche/'+valeurRecherche">
                     <md-button class="md-icon-button">
                         <md-icon class="icon-recherche">search</md-icon>
                     </md-button>
