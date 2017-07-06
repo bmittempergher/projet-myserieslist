@@ -2,7 +2,7 @@
     <div>
         <md-layout md-gutter>
             <md-layout v-for="(titre , index) in titres" v-bind:key="index" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
-                <md-card style="max-width: 320px; display: inline-block; padding: 10px; margin: 16px;">
+                <md-card style="max-width: 400px; display: inline-block; padding: 10px; margin: 16px;">
                     <md-card-header>
                         <div class="md-title" style="text-align: center;">{{titre}}</div>
                     </md-card-header>
@@ -27,7 +27,7 @@ export default {
     .then((response) => {
       this.images = response.data.results.map(item => lien + item.poster_path);
       this.titres = response.data.results.map(item => item.original_name);
-      this.synopsis = response.data.results.map(item => item.overview);
+      this.synopsis = response.data.results.map(item => item.overview.substr(0, 250) + ' ...');
     })
     .catch(error => {
       console.log(error);
