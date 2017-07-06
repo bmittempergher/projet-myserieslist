@@ -1,19 +1,21 @@
 <template>
-    <div>
-        <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
-            <md-card>
-                <md-card-header>
-                    <div class="md-title">{{serie.titre}}</div>
-                </md-card-header>
-                <md-card-media>
-                    <img v-bind:src="serie.image" style="width: 200px; height: 200px;">
-                </md-card-media>
-                <md-card-content>
-                    {{serie.synopsis}}
-                </md-card-content>
-            </md-card>
-        </md-layout>
-    </div>
+  <div>
+    <md-layout md-gutter>
+      <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
+        <md-card style="max-width: 320px; display: inline-block; padding: 10px; margin: 16px;">
+            <md-card-header>
+                <div class="md-title" style="text-align: center;">{{serie.titre}}</div>
+            </md-card-header>
+            <md-card-media>
+                <img v-bind:src="serie.image" style="width: inherit; margin: auto; display: block;">
+            </md-card-media>
+            <md-card-content>
+                {{serie.synopsis}}
+            </md-card-content>
+        </md-card>
+      </md-layout>
+    </md-layout>
+  </div>
 </template>
 
 <script>
@@ -34,8 +36,6 @@ export default {
           synopsis: ListeSynopsis[index]
         });
       });
-      // ici normand a enlever
-      console.log(listeSeries);
       this.listeSeries = listeSeries;
     })
     .catch(error => {
@@ -47,11 +47,6 @@ export default {
     };
   },
   props: ['serie'],
-  filters: {
-    toImage (serie) {
-      return 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/1200px-Breaking_Bad_logo.svg.png';
-    }
-  },
   name: 'serie'
 };
 </script>
