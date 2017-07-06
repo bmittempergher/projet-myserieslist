@@ -54,5 +54,6 @@ A COMPLETER
 5. La balise router-view indique qu'il faut suivre une route pour y afficher le contenu
 6. Le système va voir dans le fichier index.js quelle route prendre
 7. La première page (vue) à être affichée est Serie.vue (celle-ci s'intègre dans la balise router-view)
+8. Les données affichées dans Serie.vue proviennent de l'API The movie database
 
 <img src="./img_readme/architecture_vue.PNG" alt="Architecture de Vue.js" >
