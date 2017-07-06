@@ -29,7 +29,7 @@ export default {
     axios.get(`https://amc.ig.he-arc.ch/tmdb/tv/popular?language=fr-CH`)
       .then((response) => {
         let ListeIds = response.data.results.map(item => item.id);
-        let ListeTitres = response.data.results.map(item => item.original_name);
+        let ListeTitres = response.data.results.map(item => item.name);
         let ListeImages = response.data.results.map(item => lien + item.poster_path);
         let ListeSynopsis = response.data.results.map(item => item.overview.substr(0, 250) + ' ...');
         let ListeNotes = response.data.results.map(item => item.vote_average / 2);
