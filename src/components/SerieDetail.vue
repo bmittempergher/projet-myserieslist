@@ -65,9 +65,12 @@ export default {
   color: white;
   background-color: black;
 }
+
 .cover h1{
   margin-top:0;
   padding-top:50px;
+  font-family: fantasy;
+  font-size:3.5em;
 }
 
 .cover p{

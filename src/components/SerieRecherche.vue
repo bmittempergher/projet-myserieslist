@@ -5,7 +5,7 @@
             <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
                 <md-card class="card">
                     <md-card-header>
-                        <a href="/#/SerieDetail/">
+                        <a v-bind:href="'/#/detail/'+serie.id">
                             <div class="md-title">{{serie.titre}}</div>
                         </a>
                     </md-card-header>
@@ -28,15 +28,19 @@ export default {
     let lien = 'http://image.tmdb.org/t/p/w185';
     axios.get(`https://amc.ig.he-arc.ch/tmdb/search/tv?query=${this.$route.params.recherche}`)
       .then((response) => {
+        let ListeIds = response.data.results.map(item => item.id);
+        let ListeTitres = response.data.results.map(item => item.name);
         let ListeImages = response.data.results.map(item => lien + item.poster_path);
-        let ListeTitres = response.data.results.map(item => item.original_name);
         let ListeSynopsis = response.data.results.map(item => item.overview.substr(0, 250) + ' ...');
+        let ListeNotes = response.data.results.map(item => item.vote_average / 2);
         let listeSeries = [];
         ListeImages.forEach((image, index) => {
           listeSeries.push({
+            id: ListeIds[index],
             image: ListeImages[index],
             titre: ListeTitres[index],
-            synopsis: ListeSynopsis[index]
+            synopsis: ListeSynopsis[index],
+            note: ListeNotes[index]
           });
         });
         this.listeSeries = listeSeries;

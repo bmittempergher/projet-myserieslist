@@ -1,19 +1,14 @@
 <template>
     <md-toolbar class="md-medium">
-        <div class="md-toolbar-container">                        
+        <a href="/#/">
+            <h1 class="md-title">MySeriesList</h1>
+        </a>
+        <label class="label-recherche">Rechercher : <input type="text" id="recherche" name="recherche" v-model="valeurRecherche" ></label>
+        <a v-bind:href="'/#/recherche/'+valeurRecherche">
             <md-button class="md-icon-button">
-                <md-icon>menu</md-icon>
+                <md-icon class="icon-recherche">search</md-icon>
             </md-button>
-            <a href="/#/">
-                <h1 class="md-title">MySeriesList</h1>
-            </a>
-            <label class="label-recherche">Rechercher : <input type="text" id="recherche" name="recherche" v-model="valeurRecherche" ></label>
-            <a v-bind:href="'/#/recherche/'+valeurRecherche">
-                <md-button class="md-icon-button">
-                    <md-icon class="icon-recherche">search</md-icon>
-                </md-button>
-            </a>
-        </div>
+        </a>
     </md-toolbar>
 </template>
 
