@@ -26,7 +26,7 @@ import axios from 'axios';
 export default {
   data () {
     let lien = 'http://image.tmdb.org/t/p/w185';
-    axios.get(`https://amc.ig.he-arc.ch/tmdb/search/tv?query=this.$route.params.recherche`)
+    axios.get(`https://amc.ig.he-arc.ch/tmdb/search/tv?query=${this.$route.params.recherche}`)
       .then((response) => {
         let ListeImages = response.data.results.map(item => lien + item.poster_path);
         let ListeTitres = response.data.results.map(item => item.original_name);
