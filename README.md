@@ -66,4 +66,4 @@ permettant de travailler de manière professionelle, ce qui est très appréciab
 <img src="./img_readme/architecture_vue.PNG" alt="Architecture de Vue.js dans le code" >
 
 ### Schéma général de l'architecture
-<img src="./img_readme/architecture_general_vue.PNG" alt="Architecture général de Vue.js" >
+<img src="./img_readme/architecture_vue_general.PNG" alt="Architecture général de Vue.js" >
