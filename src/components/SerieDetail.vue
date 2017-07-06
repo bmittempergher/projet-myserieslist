@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h1>{{$route.params.id}}</h1>
+        <h1>{{serie.titre}}</h1>
+        <img :src="serie.image">
+        <h2>Note : {{serie.note}}</h2>
+        <p>{{serie.synopsis}}</p>
     </div>
 </template>
 
@@ -8,34 +11,23 @@
 import axios from 'axios';
 export default {
   data () {
-    let lien = 'http://image.tmdb.org/t/p/w185';
-    axios.get(`https://amc.ig.he-arc.ch/tmdb/tv/$($route.params.id)?language=fr-CH`)
+    axios.get(`https://amc.ig.he-arc.ch/tmdb/tv/${this.$route.params.id}?language=fr-CH`)
       .then((response) => {
-        let ListeIds = response.data.results.map(item => item.id);
-        let ListeTitres = response.data.results.map(item => item.original_name);
-        let ListeImages = response.data.results.map(item => lien + item.poster_path);
-        let ListeSynopsis = response.data.results.map(item => item.overview.substr(0, 250) + ' ...');
-        let ListeNotes = response.data.results.map(item => item.vote_average / 2);
-        let listeSeries = [];
-        ListeImages.forEach((image, index) => {
-          listeSeries.push({
-            id: ListeIds[index],
-            image: ListeImages[index],
-            titre: ListeTitres[index],
-            synopsis: ListeSynopsis[index],
-            note: ListeNotes[index]
-          });
-        });
-        // ici normand enelver
-        console.log(listeSeries);
-        this.listeSeries = listeSeries;
+        let serie = {};
+        serie.id = response.data.id;
+        serie.image = 'http://image.tmdb.org/t/p/w185' + response.data.poster_path;
+        serie.synopsis = response.data.overview;
+        serie.note = response.data.vote_average / 2;
+        serie.titre = response.data.name;
+
+        this.serie = serie;
       })
       .catch(error => {
         console.log(error);
       });
 
     return {
-      results: []
+      serie: {}
     };
   }
 };
