@@ -21,8 +21,8 @@ export default new Router({
       component: SerieDetail
     },
     {
-      path: '/',
-      name: 'recherche/:recherche',
+      path: '/recherche/:recherche',
+      name: 'SerieRecherche',
       component: SerieRecherche
     }
   ]
