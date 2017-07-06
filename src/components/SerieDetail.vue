@@ -1,23 +1,26 @@
 <template>
     <div>
-        <md-layout v-for="(titre , index) in titres" v-bind:key="index" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
-            <md-card>
-                <md-card-header>
-                    <div class="md-title">{{titre}}</div>
-                </md-card-header>
-                <md-card-media>
-                    <img v-bind:src="images[index]" style="width: 200px; height: 200px;">
-                </md-card-media>
-                <md-card-content>
-                    {{synopsis[index]}}
-                </md-card-content>
-            </md-card>
-        </md-layout>
+        <h1>{{$route.params.query}}</h1>
+        <img v-for="url in results" v-bind:src="url" v-bind:key="url">
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+  data () {
+    axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${this.$route.params.query}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
+    .then((response) => {
+      this.results = response.data.items.map(item => item.image.thumbnailLink);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+    return {
+      results: []
+    };
+  }
 };
 </script>
 

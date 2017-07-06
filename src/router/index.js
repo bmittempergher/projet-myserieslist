@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import VueMaterial from 'vue-material';
 import Serie from '@/components/Serie';
+import SerieDetail from '@/components/SerieDetail';
 
 Vue.use(VueMaterial);
 Vue.use(Router);
@@ -14,9 +15,9 @@ export default new Router({
       component: Serie
     },
     {
-      path: '/',
+      path: '/detail/:query',
       name: 'SerieDetail',
-      component: Serie
+      component: SerieDetail
     }
   ]
 });
