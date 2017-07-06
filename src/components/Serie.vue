@@ -1,6 +1,6 @@
 <template>
     <div>
-        <md-layout v-for="(listeSeries , serie) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
+        <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
             <md-card>
                 <md-card-header>
                     <div class="md-title">{{serie.titre}}</div>
