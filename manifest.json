@@ -1,0 +1,17 @@
+{
+  "name": "MySeriesList",
+  "short_name": "MySeriesList",
+  "description": "Gestion de suivi des séries",
+  "lang": "fr-CH",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#004D40",
+  "icons": [
+    {
+      "src": "static/logo_series.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#CFD8DC"
+}

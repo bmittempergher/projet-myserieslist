@@ -14,3 +14,22 @@ new Vue({
   template: '<App/>',
   components: { App }
 });
+
+Vue.material.registerTheme('default', {
+  primary: {
+    color: 'teal',
+    hue: '900'
+  },
+  accent: {
+    color: 'grey',
+    hue: '100'
+  },
+  warn: {
+    color: 'red',
+    hue: 'A700'
+  },
+  background: {
+    color: 'blue-grey',
+    hue: '900'
+  }
+});
