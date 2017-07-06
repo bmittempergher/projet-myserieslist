@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h2 style="margin-left: 25px;">Populaire en ce moment :</h2>
+    <h2>Populaire en ce moment :</h2>
     <md-layout md-gutter>
       <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
-        <md-card style="max-width: 400px; display: inline-block; padding: 10px; margin: 16px;">
+        <md-card class="card">
           <md-card-header>
             <a v-bind:href="'/#/detail/'+serie.id">
-              <div class="md-title" style="text-align: center;">{{serie.titre}}</div>
+              <div class="md-title">{{serie.titre}}</div>
             </a>
           </md-card-header>
           <md-card-media>
-            <img v-bind:src="serie.image" style="width: inherit; margin: auto; display: block;">
+            <img class="img-serie-list" v-bind:src="serie.image">
           </md-card-media>
-          <md-card-content>
-            {{serie.synopsis}}
+          <md-card-content class="synopsis-list">
+            <cite>{{serie.synopsis}}</cite>
           </md-card-content>
         </md-card>
       </md-layout>
@@ -59,5 +59,39 @@ export default {
 </script>
 
 <style>
+    .card {
+        max-width: 470px;
+        display: inline-block;
+        padding: 10px;
+        margin: 26px;  
+    }
 
+    h2 {
+        margin-left: 28px;
+        color: #263238;
+        font-family: fantasy;
+        font-size: 1.9em !important;
+    }
+
+    .md-title {
+        text-align: center;
+        font-size: 2.4em !important;
+        font-family: fantasy;
+    }
+
+    a:hover {
+        text-decoration: none !important;
+        color: #80CBC4 !important;
+    }
+
+    .img-serie-list {
+        width: inherit !important;
+        margin: auto !important;
+        display: block !important;
+    }
+
+    .synopsis-list {
+        color: whitesmoke;
+        font-size: 1.2em !important;
+    }
 </style>

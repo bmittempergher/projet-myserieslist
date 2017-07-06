@@ -5,7 +5,7 @@
   "lang": "fr-CH",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#00695C",
+  "theme_color": "#004D40",
   "icons": [
     {
       "src": "static/logo_series.png",
@@ -13,5 +13,5 @@
       "type": "image/png"
     }
   ],
-  "background_color": "#BDBDBD"
+  "background_color": "#CFD8DC"
 }

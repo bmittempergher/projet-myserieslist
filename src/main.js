@@ -18,7 +18,7 @@ new Vue({
 Vue.material.registerTheme('default', {
   primary: {
     color: 'teal',
-    hue: '800'
+    hue: '900'
   },
   accent: {
     color: 'grey',
@@ -29,7 +29,7 @@ Vue.material.registerTheme('default', {
     hue: 'A700'
   },
   background: {
-    color: 'teal',
-    hue: '300'
+    color: 'blue-grey',
+    hue: '900'
   }
 });
