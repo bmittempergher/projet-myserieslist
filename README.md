@@ -43,8 +43,14 @@ Les informations des séries/films doivent être reprises directement en ligne.
 
 <img src="./img_readme/detail_lg.PNG" alt="Detail d'une serie de ma liste" >
 
-## Problèmes/Solutions et retour d'expérience
-A COMPLETER
+## Retour d'expérience
+Concernant le retour d'expérience, nous avons bien apprécié ce cours.
+En effet ce dernier était complet et montrait bien la manière de procéder lors
+de l'apprentissage d'une nouvelle technologie.
+
+De plus, le cours "est à jour" et utilise de récente technologies comme Vue.
+Le fait d'utiliser beaucoup d'outils notamment git permet de découvrir un ensemble
+permettant de travailler de manière professionelle, ce qui est très appréciable.
 
 ## Schéma de l'architecture
 1. On arrive au point d'entrée index.html
@@ -56,4 +62,8 @@ A COMPLETER
 7. La première page (vue) à être affichée est Serie.vue (celle-ci s'intègre dans la balise router-view)
 8. Les données affichées dans Serie.vue proviennent de l'API The movie database
 
-<img src="./img_readme/architecture_vue.PNG" alt="Architecture de Vue.js" >
+### Schéma détaillé dans le code
+<img src="./img_readme/architecture_vue.PNG" alt="Architecture de Vue.js dans le code" >
+
+### Schéma général de l'architecture
+<img src="./img_readme/architecture_general_vue.PNG" alt="Architecture général de Vue.js" >
