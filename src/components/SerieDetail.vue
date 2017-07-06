@@ -2,7 +2,7 @@
   <div>
     <div class="cover">
       <md-layout md-gutter>
-        <md-layout md-flex-xsmall="100" md-flex-small="100" md-flex-medium="100">
+        <md-layout md-align="center" md-flex-xsmall="100" md-flex-small="100" md-flex-medium="100">
           <h1>{{serie.titre}}</h1>
         </md-layout>
       </md-layout>
@@ -32,11 +32,11 @@
 <script>
 import axios from 'axios';
 export default {
-  data () {
+  created () {
     let serie = {};
     if (typeof (localStorage.getItem(this.$route.params.id)) !== 'undefined' && localStorage.getItem(this.$route.params.id) !== null) {
-      serie = JSON.parse(localStorage.getItem(this.$route.params.id));
-      document.documentElement.style.setProperty('--img', 'url("' + serie.imageFond + '"');
+      this.serie = JSON.parse(localStorage.getItem(this.$route.params.id));
+      document.documentElement.style.setProperty('--img', 'url("' + this.serie.imageFond + '"');
     } else {
       axios.get(`https://amc.ig.he-arc.ch/tmdb/tv/${this.$route.params.id}?language=fr-CH`)
         .then((response) => {
@@ -73,7 +73,8 @@ export default {
           this.serie = serie;
         });
     }
-
+  },
+  data () {
     return {
       serie: []
     };

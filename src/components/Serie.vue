@@ -85,7 +85,7 @@ export default {
       handler () {
         localStorage.clear;
         this.listeSeries.forEach(function (serie) {
-          // localStorage.setItem(serie.id, JSON.stringify(serie));
+          localStorage.setItem(serie.id, JSON.stringify(serie));
         }, this);
       },
       deep: true
