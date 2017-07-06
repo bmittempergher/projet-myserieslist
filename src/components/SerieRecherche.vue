@@ -25,7 +25,7 @@
 import axios from 'axios';
 export default {
   data () {
-    axios.get(`https://amc.ig.he-arc.ch/tmdb/search/tv?query=${this.$route.params.recherche}`)
+    axios.get(`https://amc.ig.he-arc.ch/tmdb/search/tv?language=fr-CH&query=${this.$route.params.recherche}`)
       .then((response) => {
         let ListeIds = response.data.results.map(item => item.id);
         let ListeTitres = response.data.results.map(item => item.name);
