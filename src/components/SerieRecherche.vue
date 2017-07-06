@@ -25,19 +25,21 @@
 import axios from 'axios';
 export default {
   data () {
-    let lien = 'http://image.tmdb.org/t/p/w185';
     axios.get(`https://amc.ig.he-arc.ch/tmdb/search/tv?query=${this.$route.params.recherche}`)
       .then((response) => {
         let ListeIds = response.data.results.map(item => item.id);
         let ListeTitres = response.data.results.map(item => item.name);
-        let ListeImages = response.data.results.map(item => lien + item.poster_path);
+        let ListeImages = response.data.results.map(item => 'http://image.tmdb.org/t/p/w185' + item.poster_path);
+        let ListeImagesFond = response.data.results.map(item => 'http://image.tmdb.org/t/p/original' + item.backdrop_path);
         let ListeSynopsis = response.data.results.map(item => item.overview.substr(0, 250) + ' ...');
         let ListeNotes = response.data.results.map(item => item.vote_average / 2);
+
         let listeSeries = [];
         ListeImages.forEach((image, index) => {
           listeSeries.push({
             id: ListeIds[index],
             image: ListeImages[index],
+            imageFond: ListeImagesFond[index],
             titre: ListeTitres[index],
             synopsis: ListeSynopsis[index],
             note: ListeNotes[index]

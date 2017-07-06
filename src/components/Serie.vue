@@ -25,19 +25,21 @@
 import axios from 'axios';
 export default {
   data () {
-    let lien = 'http://image.tmdb.org/t/p/w185';
     axios.get(`https://amc.ig.he-arc.ch/tmdb/tv/popular?language=fr-CH`)
       .then((response) => {
         let ListeIds = response.data.results.map(item => item.id);
         let ListeTitres = response.data.results.map(item => item.name);
-        let ListeImages = response.data.results.map(item => lien + item.poster_path);
+        let ListeImages = response.data.results.map(item => 'http://image.tmdb.org/t/p/w185' + item.poster_path);
+        let ListeImagesFond = response.data.results.map(item => 'http://image.tmdb.org/t/p/original' + item.backdrop_path);
         let ListeSynopsis = response.data.results.map(item => item.overview.substr(0, 250) + ' ...');
         let ListeNotes = response.data.results.map(item => item.vote_average / 2);
+
         let listeSeries = [];
         ListeImages.forEach((image, index) => {
           listeSeries.push({
             id: ListeIds[index],
             image: ListeImages[index],
+            imageFond: ListeImagesFond[index],
             titre: ListeTitres[index],
             synopsis: ListeSynopsis[index],
             note: ListeNotes[index]
@@ -53,45 +55,56 @@ export default {
       listeSeries: []
     };
   },
+  watch: {
+    listeSeries: {
+      handler () {
+        localStorage.clear;
+        this.listeSeries.forEach(function (serie) {
+          // localStorage.setItem(serie.id, JSON.stringify(serie));
+        }, this);
+      },
+      deep: true
+    }
+  },
   props: ['serie'],
   name: 'serie'
 };
 </script>
 
 <style>
-    .card {
-        max-width: 470px;
-        display: inline-block;
-        padding: 10px;
-        margin: 26px;  
-    }
+  .card {
+      max-width: 470px;
+      display: inline-block;
+      padding: 10px;
+      margin: 26px;  
+  }
 
-    h2 {
-        margin-left: 28px;
-        color: #263238;
-        font-family: fantasy;
-        font-size: 1.9em !important;
-    }
+  h2 {
+      margin-left: 28px;
+      color: #263238;
+      font-family: fantasy;
+      font-size: 1.9em !important;
+  }
 
-    .md-title {
-        text-align: center;
-        font-size: 2.4em !important;
-        font-family: fantasy;
-    }
+  .md-title {
+      text-align: center;
+      font-size: 2.4em !important;
+      font-family: fantasy;
+  }
 
-    a:hover {
-        text-decoration: none !important;
-        color: #80CBC4 !important;
-    }
+  a:hover {
+      text-decoration: none !important;
+      color: #80CBC4 !important;
+  }
 
-    .img-serie-list {
-        width: inherit !important;
-        margin: auto !important;
-        display: block !important;
-    }
+  .img-serie-list {
+      width: inherit !important;
+      margin: auto !important;
+      display: block !important;
+  }
 
-    .synopsis-list {
-        color: whitesmoke;
-        font-size: 1.2em !important;
-    }
+  .synopsis-list {
+      color: whitesmoke;
+      font-size: 1.2em !important;
+  }
 </style>
