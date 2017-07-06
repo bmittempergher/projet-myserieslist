@@ -43,7 +43,7 @@ export default {
           if (typeof (ListeImages[index]) === 'undefined' || ListeImages[index] === null) {
             axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${titre}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
             .then((response) => {
-              lienImage = response.data.items.map(item => item.image.thumbnailLink)[0];
+              lienImage = response.data.items.map(item => item.link)[0];
               lienImageFond = lienImage;
               listeSeries.push({
                 id: ListeIds[index],

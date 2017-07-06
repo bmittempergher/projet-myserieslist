@@ -59,7 +59,7 @@ export default {
           if (typeof (response.data.backdrop_path) === 'undefined' || response.data.backdrop_path === null) {
             axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${serie.titre}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
               .then((response) => {
-                serie.image = response.data.items.map(item => item.image.thumbnailLink)[0];
+                serie.image = response.data.items.map(item => item.link)[0];
                 serie.imageFond = serie.image;
                 document.documentElement.style.setProperty('--img', 'url("' + serie.imageFond + '"');
                 this.serie = serie;
@@ -90,8 +90,7 @@ export default {
 .cover {
   background-image: var(--img);
   min-height: 600px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   color: white;
   background-color: black;
