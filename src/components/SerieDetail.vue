@@ -41,8 +41,6 @@ export default {
       axios.get(`https://amc.ig.he-arc.ch/tmdb/tv/${this.$route.params.id}?language=fr-CH`)
         .then((response) => {
           serie.id = response.data.id;
-          serie.image = 'http://image.tmdb.org/t/p/w185' + response.data.poster_path;
-          serie.imageFond = 'http://image.tmdb.org/t/p/original' + response.data.backdrop_path;
           serie.synopsis = response.data.overview;
           serie.note = response.data.vote_average / 2;
           serie.titre = response.data.name;
@@ -57,11 +55,22 @@ export default {
             serie.etat = 'Terminée';
           };
 
+          // S'il n'y a pas d'image, en recherche une sur google
+          if (typeof (response.data.backdrop_path) === 'undefined' || response.data.backdrop_path === null) {
+            axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${serie.titre}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
+              .then((response) => {
+                serie.image = response.data.items.map(item => item.image.thumbnailLink)[0];
+                serie.imageFond = serie.image;
+                document.documentElement.style.setProperty('--img', 'url("' + serie.imageFond + '"');
+                this.serie = serie;
+              });
+          } else {
+            serie.image = 'http://image.tmdb.org/t/p/w185' + response.data.poster_path;
+            serie.imageFond = 'http://image.tmdb.org/t/p/original' + response.data.backdrop_path;
+          };
+
           document.documentElement.style.setProperty('--img', 'url("' + serie.imageFond + '"');
           this.serie = serie;
-        })
-        .catch(error => {
-          console.log(error);
         });
     }
 
@@ -80,7 +89,9 @@ export default {
 .cover {
   background-image: var(--img);
   min-height: 600px;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   color: white;
   background-color: black;
 }
