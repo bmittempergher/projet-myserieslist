@@ -1,13 +1,12 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <h2 style="margin-left: 25px;">Prochaine sortie :</h2>
+    <h2 style="margin-left: 25px;">Populaire en ce moment :</h2>
       <serie></serie>
   </div>
 </template>
 
 <script>
-  import Menu from './components/Menu';
   import Serie from './components/Serie';
   export default {
     name: 'app',
@@ -19,8 +18,7 @@
       };
     },
     components: {
-      Serie,
-      Menu
+      Serie
     }
   };
 </script>
