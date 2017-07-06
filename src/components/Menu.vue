@@ -7,7 +7,8 @@
             <a href="/#/">
                 <h2 class="md-title" style="flex: 1;">MySeriesList</h2>
             </a>
-            <a href="/#/SerieRecherche/">
+            <label>Rechercher : <input type="text" id="recherche" name="recherche" v-model="valeurRecherche" ></label>
+            <a id="lien_recherche" v-bind:href="'/#/SerieRecherche/'+valeurRecherche">
                 <md-button class="md-icon-button">
                     <md-icon>search</md-icon>
                 </md-button>
@@ -18,6 +19,12 @@
 
 <script>
 export default {
+  data () {
+    let valeurRecherche;
+    return {
+      valeurRecherche: valeurRecherche
+    };
+  },
   name: 'menuPrincipal'
 };
 </script>
