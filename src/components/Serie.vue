@@ -1,10 +1,11 @@
 <template>
   <div>
+    <h2 style="margin-left: 25px;">Populaire en ce moment :</h2>
     <md-layout md-gutter>
       <md-layout v-for="(serie , index) in listeSeries" v-bind:key="serie" md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-flex-large="33">
         <md-card style="max-width: 400px; display: inline-block; padding: 10px; margin: 16px;">
           <md-card-header>
-            <a v-bind:href="'/#/detail/'+serie.titre">
+            <a v-bind:href="'/#/detail/'+serie.id">
               <div class="md-title" style="text-align: center;">{{serie.titre}}</div>
             </a>
           </md-card-header>

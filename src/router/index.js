@@ -15,7 +15,7 @@ export default new Router({
       component: Serie
     },
     {
-      path: '/detail/:query',
+      path: '/detail/:id',
       name: 'SerieDetail',
       component: SerieDetail
     }
